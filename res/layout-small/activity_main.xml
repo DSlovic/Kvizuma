@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9AE345"
+    android:scrollbars="vertical"
+    tools:context="com.example.kvizuma.MainActivity">
+
+    <Button
+        android:id="@+id/button_matematika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/purple_500"
+        android:text="Matematika"
+        android:textColor="#E1BEE7"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_geografija"
+        android:layout_width="262dp"
+        android:layout_height="60dp"
+        android:layout_gravity="left"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/purple_500"
+        android:text="Geografija"
+        android:textColor="#E1BEE7"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_matematika" />
+
+    <Button
+        android:id="@+id/button_settingsGeo"
+        android:layout_width="54dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="55dp"
+        android:foreground="@drawable/settings_foreground"
+        android:padding="20dp"
+        app:layout_constraintStart_toEndOf="@+id/button_geografija"
+        app:layout_constraintTop_toBottomOf="@+id/button_matematika"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/button_infoGeo"
+        android:layout_width="54dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="55dp"
+        android:padding="10dp"
+        app:icon="@drawable/ic_baseline_info_24"
+        app:iconGravity="textEnd"
+        app:iconPadding="0dp"
+        app:iconSize="38dp"
+        app:iconTint="#CDCDCD"
+        app:layout_constraintStart_toEndOf="@+id/button_settingsGeo"
+        app:layout_constraintTop_toBottomOf="@+id/button_matematika"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/button_infoMath"
+        android:layout_width="54dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:padding="10dp"
+        app:icon="@drawable/ic_baseline_info_24"
+        app:iconGravity="textEnd"
+        app:iconPadding="0dp"
+        app:iconSize="38dp"
+        app:iconTint="#CDCDCD"
+        app:layout_constraintStart_toEndOf="@+id/button_matematika"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <FrameLayout
+        android:id="@+id/settingFrame"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:background="#A6A6A6"
+        android:foreground="@drawable/border_purpel"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_geografija">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Switch
+                android:id="@+id/switch_sAmericaAndAustralija"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:text="Južna Amerika, Australja i Okeanija"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_closeSettings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Switch
+                android:id="@+id/switch_nAmerica"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:text="Severna Amerika"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/switch_sAmericaAndAustralija"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Switch
+                android:id="@+id/switch_europe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:text="Europa"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/switch_asia"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Switch
+                android:id="@+id/switch_asia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:text="Azija"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/switch_africa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Switch
+                android:id="@+id/switch_africa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:text="Afrika"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/switch_nAmerica"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/button_closeSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Zatvori"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoLayout"
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/oval_frame"
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_geografija">
+
+        <TextView
+            android:id="@+id/textInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:scrollbars="vertical"
+            android:textColor="#421E8A"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

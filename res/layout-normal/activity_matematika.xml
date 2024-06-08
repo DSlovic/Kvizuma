@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/corLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9AE345"
+    android:scrollbars="horizontal|vertical"
+    android:visibility="visible"
+    tools:context=".ActivityMatematika">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/purple_500">
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="150px"
+            android:layout_height="90px"
+            android:layout_margin="30px"
+            app:icon="@drawable/abc_vector_test"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textView_TotalScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:clickable="false"
+            android:editable="false"
+            android:text="Poeni: "
+            android:textColor="#D1D1D1"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/appBarLayout"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/scoreFLayout"
+            android:layout_width="600px"
+            android:layout_height="250px"
+            android:layout_gravity="right|top"
+            android:background="#C8AE3939"
+            android:foreground="@drawable/score_border"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:isScrollContainer="true"
+                    android:orientation="vertical"
+                    android:scrollbars="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/scoreOPListView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ListView
+                        android:id="@+id/scoreListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="20dp"
+                        android:scrollbars="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="TouchTargetSizeCheck">
+
+                    </ListView>
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/scoreOPListView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/button_closeScoreboard"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/button_closeScoreboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginStart="94dp"
+                    android:layout_marginLeft="94dp"
+                    android:layout_marginEnd="94dp"
+                    android:layout_marginRight="94dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Zatvori"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/button_sabiranje"
+            android:layout_width="275px"
+            android:layout_height="120px"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="100dp"
+            android:text="Sabiranje"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_oduzimanje"
+            android:layout_width="275px"
+            android:layout_height="120px"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:text="Oduzimanje"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_deljenje"
+            android:layout_width="275px"
+            android:layout_height="120px"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:text="Denjenje"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_oduzimanje" />
+
+        <Button
+            android:id="@+id/button_množenje"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="275px"
+            android:layout_height="120px"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="20dp"
+            android:text="Množenje"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_sabiranje" />
+
+        <Button
+            android:id="@+id/button_finale"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="350px"
+            android:layout_height="140px"
+            android:text="Konačni Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_scoreBoard"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="350px"
+            android:layout_height="140px"
+            android:layout_marginTop="20dp"
+            android:text="Rekordi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_finale" />
+
+        <TextView
+            android:id="@+id/textView_pointsAdded"
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="14dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_setRecord"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="95dp"
+        android:background="#9AE345"
+        android:foreground="@drawable/border_purpel"
+        android:visibility="invisible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/textView_congratulations"
+                android:layout_width="match_parent"
+                android:layout_height="150px"
+                android:layout_gravity="top"
+                android:background="#FF6200EE"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="ČESTITKE!"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FDD835"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_achievement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#655E35B1"
+                android:fontFamily="sans-serif-medium"
+                android:foreground="@drawable/border_gold"
+                android:gravity="center"
+                android:padding="10px"
+                android:text="Achievement"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_congratulations" />
+
+            <TextView
+                android:id="@+id/textView_pointAchievedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Osvojeno Poena: "
+                android:textColor="#050505"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_achievement" />
+
+            <TextView
+                android:id="@+id/textView_pointsAchieved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-black"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/textView_pointAchievedText"
+                app:layout_constraintTop_toBottomOf="@+id/textView_achievement" />
+
+            <TextView
+                android:id="@+id/textView_fillInYourNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="?attr/editTextBackground"
+                android:gravity="center"
+                android:text="Unesite Vaše Ime Ispod:"
+                android:textColor="#0E0E0E"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_pointsAchieved" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_fillInYourNameText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_name_textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#95FFFFFF"
+                    android:editable="true"
+                    android:foreground="?attr/editTextBackground"
+                    android:textColor="#151515"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/buttonConfirmInputName"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="sans-serif"
+                android:foreground="@drawable/border_gold"
+                android:text="POTVRDI"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
